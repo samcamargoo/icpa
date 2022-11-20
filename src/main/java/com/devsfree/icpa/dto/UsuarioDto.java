@@ -14,17 +14,13 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
 /**
  * @author Paulo Manzano
  *
  */
 
-=======
->>>>>>> samuel
->>>>>>> paulo-v2
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

@@ -1,10 +1,5 @@
 package com.devsfree.icpa.controller;
 
-<<<<<<< HEAD
-import com.devsfree.icpa.dto.UsuarioDto;
-import com.devsfree.icpa.dto.UsuarioRetorno;
-=======
-<<<<<<< HEAD
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -18,52 +13,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.devsfree.icpa.dto.UsuarioDto;
-=======
-import com.devsfree.icpa.dto.UsuarioDto;
-import com.devsfree.icpa.dto.UsuarioRetorno;
->>>>>>> samuel
->>>>>>> paulo-v2
 import com.devsfree.icpa.service.CadastroUsuarioService;
 
 import lombok.AllArgsConstructor;
 
-<<<<<<< HEAD
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-=======
-<<<<<<< HEAD
-/**
- * @author Paulo Manzano
- *
- */
-=======
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
->>>>>>> samuel
->>>>>>> paulo-v2
 
 @AllArgsConstructor
 @RestController
 @RequestMapping("api/v1/cadastro")
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
+
 @CrossOrigin(origins = "*")
-=======
->>>>>>> samuel
->>>>>>> paulo-v2
+
 public class CadastroUsuarioController {
 
     private CadastroUsuarioService cadastroUsuarioService;
 
     @PostMapping
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
     @PreAuthorize("hasRole('ROLE_ADMINISTRADOR') or hasRole('ROLE_OWNER')")
-=======
->>>>>>> samuel
->>>>>>> paulo-v2
     public ResponseEntity<Object> cadastrarUsuario(@RequestBody UsuarioDto usuarioDto){
         return cadastroUsuarioService.cadastrarUsuario(usuarioDto);
 

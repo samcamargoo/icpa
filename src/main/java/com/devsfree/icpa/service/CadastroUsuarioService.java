@@ -10,13 +10,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 import org.springframework.security.crypto.password.PasswordEncoder;
-=======
->>>>>>> samuel
->>>>>>> paulo-v2
 import org.springframework.stereotype.Service;
 
 import com.devsfree.icpa.dto.UsuarioDto;
@@ -26,42 +20,24 @@ import com.devsfree.icpa.repository.UsuarioRepository;
 
 import lombok.AllArgsConstructor;
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 /**
  * @author Paulo Manzano
  *
  */
 
-=======
->>>>>>> samuel
->>>>>>> paulo-v2
 @Service
 @AllArgsConstructor
 public class CadastroUsuarioService {
 
     private UsuarioRepository usuarioRepository;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
     private PasswordEncoder passwordEncoder;
-=======
->>>>>>> samuel
->>>>>>> paulo-v2
 
 
     /************ CADASTRO DE USUARIO
      *
      * @param
      * @return
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
      *
-=======
->>>>>>> samuel
->>>>>>> paulo-v2
      */
     public ResponseEntity<Object> cadastrarUsuario(UsuarioDto usuarioDto){
 
@@ -75,14 +51,8 @@ public class CadastroUsuarioService {
             Usuario usuario = new Usuario();
             BeanUtils.copyProperties(usuarioDto, usuario);
             usuario.setCadastro(cadastro);
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
             usuario.setSenha(passwordEncoder.encode(usuarioDto.getSenha()));
 
-=======
->>>>>>> samuel
->>>>>>> paulo-v2
             usuarioRepository.save(usuario);
             return ResponseEntity.status(HttpStatus.CREATED).body("Cadastro " + email + " efetuado com sucesso!");
         }

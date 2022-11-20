@@ -16,9 +16,6 @@ import lombok.AllArgsConstructor;
 @Service
 @AllArgsConstructor
 @Transactional
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 public class UserDetailsServiceImpl implements UserDetailsService {
 
 	private final UsuarioRepository usuarioRepository;
@@ -28,20 +25,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 		Usuario usuario = usuarioRepository.findByEmail(email)
 				.orElseThrow(() -> new UsernameNotFoundException("Usuário inválido"));
 		return new User(usuario.getEmail(), usuario.getSenha(), true, true, true, true, usuario.getAuthorities());
-=======
->>>>>>> paulo-v2
-public class UserDetailsServiceImpl implements UserDetailsService{
-
-	private final UsuarioRepository usuarioRepository;
-	
-	@Override
-	public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-		Usuario usuario = usuarioRepository.findByEmail(email).orElseThrow(() -> new UsernameNotFoundException("Usuário não encontrado"));
-		return new User(usuario.getEmail(), usuario.getSenha(), true, true, true, usuario.getAuthorities());
-<<<<<<< HEAD
-=======
->>>>>>> samuel
->>>>>>> paulo-v2
 	}
 
 }

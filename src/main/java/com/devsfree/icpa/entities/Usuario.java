@@ -1,9 +1,5 @@
 package com.devsfree.icpa.entities;
 
-<<<<<<< HEAD
-import javax.persistence.*;
-=======
-<<<<<<< HEAD
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -19,10 +15,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-=======
-import javax.persistence.*;
->>>>>>> samuel
->>>>>>> paulo-v2
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -31,21 +23,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-<<<<<<< HEAD
-import java.time.LocalDateTime;
-import java.util.Collection;
-=======
-<<<<<<< HEAD
 /**
  * @author Paulo Manzano
  * @author Samuel - UserDetails
  *
  */
-=======
-import java.time.LocalDateTime;
-import java.util.Collection;
->>>>>>> samuel
->>>>>>> paulo-v2
 
 @Entity
 @Data
@@ -76,9 +58,6 @@ public class Usuario implements UserDetails {
 	private String senha;
 
 	private LocalDateTime cadastro;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 	
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "tb_usuario_roles", joinColumns = @JoinColumn(name = "usuario_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
@@ -87,17 +66,6 @@ public class Usuario implements UserDetails {
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		return this.roles;
-=======
->>>>>>> paulo-v2
-
-	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
-		return null;
-<<<<<<< HEAD
-=======
->>>>>>> samuel
->>>>>>> paulo-v2
 	}
 
 	@Override
