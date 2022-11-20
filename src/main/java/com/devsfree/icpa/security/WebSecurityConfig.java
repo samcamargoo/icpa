@@ -39,7 +39,8 @@ public class WebSecurityConfig {
 		.antMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
 		.anyRequest().authenticated()
 		.and()
-		.csrf().disable();
+		.csrf().disable()
+		.cors().disable();
 	return http.build();
 	}
 	
@@ -63,7 +64,7 @@ public class WebSecurityConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
-        config.addAllowedOrigin("http://127.0.0.1:5173");
+        config.addAllowedOrigin("https://127.0.0.1:5173");
         config.setAllowedMethods(Arrays.asList("POST", "OPTIONS", "GET", "DELETE", "PUT"));
         config.setAllowedHeaders(Arrays.asList("X-Requested-With", "Origin", "Content-Type", "Accept", "Authorization"));
         source.registerCorsConfiguration("/**", config);
