@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.devsfree.icpa.entities.SenhaToken;
@@ -30,6 +31,7 @@ public class SenhaService {
 	private final UsuarioRepository usuarioRepository;
 	private final EmailSenderService emailSenderService;
 	private final SenhaTokenRepository senhaTokenRepository;
+	private final PasswordEncoder passwordEncoder;
 	
 	@Transactional
 	public ResponseEntity<Object> gerarLinkParaAtualizarSenha(String email) {
@@ -85,7 +87,7 @@ public class SenhaService {
 		
 		Optional<Usuario> usuarioOptional = usuarioRepository.findById(tokenOptional.get().getUsuario().getId());
 		
-		usuarioOptional.get().setSenha(alterarSenha.getSenha());
+		usuarioOptional.get().setSenha(passwordEncoder.encode(alterarSenha.getSenha()));
 		
 		usuarioRepository.save(usuarioOptional.get());
 		
