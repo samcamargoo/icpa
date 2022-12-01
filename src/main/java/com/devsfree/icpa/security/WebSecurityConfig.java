@@ -67,7 +67,7 @@ public class WebSecurityConfig {
 	    
         // config.addAllowedOrigin("https://dashboard-vagas.netlify.app/");
 	    
-	config.addAllowedOrigin("*");
+	config.addAllowedOriginPattern("*");
         config.setAllowedMethods(Arrays.asList("POST", "OPTIONS", "GET", "DELETE", "PUT"));
         config.setAllowedHeaders(Arrays.asList("X-Requested-With", "Origin", "Content-Type", "Accept", "Authorization"));
         source.registerCorsConfiguration("/**", config);
