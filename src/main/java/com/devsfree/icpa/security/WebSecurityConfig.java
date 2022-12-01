@@ -36,7 +36,7 @@ public class WebSecurityConfig {
 		.antMatchers(HttpMethod.POST, "/api/v1/login/**").permitAll()
 		//.antMatchers(HttpMethod.POST, "/api/v1/cadastro/**").permitAll()
 		.antMatchers(HttpMethod.POST, "/api/v1/recuperar-senha/**").permitAll()
-		.antMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
+		.antMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html", "/swagger-resources/**", "/configuration/security", "/webjars/**", "/configuration/ui" ).permitAll()
 		.anyRequest().authenticated()
 		.and()
 		.csrf().disable()
