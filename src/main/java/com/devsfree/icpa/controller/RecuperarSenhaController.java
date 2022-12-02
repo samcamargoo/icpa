@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.devsfree.icpa.models.AlterarSenha;
 import com.devsfree.icpa.service.SenhaService;
@@ -33,7 +34,7 @@ public class RecuperarSenhaController {
 	}
 	
 	@PostMapping("atualizar-senha")
-	public ResponseEntity<Object> atualizarSenha(@RequestParam (value = "token") String token, AlterarSenha senhas) {
+	public ResponseEntity<Object> atualizarSenha(@RequestParam (value = "token") String token, @RequestBody AlterarSenha senhas) {
 		return senhaService.atualizarSenha(token, senhas);
 	}
 	
