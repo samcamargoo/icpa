@@ -123,7 +123,7 @@ public class CadastroUsuarioService {
 
         usuarioOptional.get().setNome(usuarioDto.getNome());
         usuarioOptional.get().setCelular(usuarioDto.getCelular());
-        usuarioOptional.get().setSenha(usuarioDto.getSenha());
+        usuarioOptional.get().setSenha(passwordEncoder.encode(usuarioDto.getSenha()));
 
 
         usuarioRepository.save(usuarioOptional.get());
